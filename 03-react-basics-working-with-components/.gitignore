@@ -1,3 +1,5 @@
+# files added before your gitignore is created will be tracked no matter what. You must remove them, commit and push, then add them back for things to work.
+
 .DS_Store
 .vscode
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
