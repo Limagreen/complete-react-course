@@ -1,0 +1,1 @@
+This is a react-vs-vanilla-js-example
