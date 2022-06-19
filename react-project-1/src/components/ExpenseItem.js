@@ -1,12 +1,17 @@
 import "./ExpenseItem.css";
 
 function ExpenseItem() {
+
+    const expenseDate = new Date(2021, 2, 28); // months start at 0, so March is 2 (not 3)
+    const expenseTitle = "Car Insurance";
+    const expensePrice = 294.67;
+
     return (
         <div className="expense-item">
-            <div>March 28th, 2021</div>
+            <div>{expenseDate.toISOString()}</div> {/* Date requires stringifying, hence the call to .toISOString() */}
             <div className="expense-item__description">
-                <h2>Car Insurance</h2>
-                <div className="expense-item__price">$249.67</div>
+                <h2>{expenseTitle}</h2>
+                <div className="expense-item__price">${expensePrice}</div>
             </div>
         </div> // end of component root
 
