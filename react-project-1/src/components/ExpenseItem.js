@@ -1,17 +1,13 @@
 import "./ExpenseItem.css";
 
-function ExpenseItem() {
-
-    const expenseDate = new Date(2021, 2, 28); // months start at 0, so March is 2 (not 3)
-    const expenseTitle = "Car Insurance";
-    const expensePrice = 294.67;
+function ExpenseItem(props) { // props (an object) scontains all attribute-value (key-value) pairs passed in component-call. By convention it's named "props"
 
     return (
         <div className="expense-item">
-            <div>{expenseDate.toISOString()}</div> {/* Date requires stringifying, hence the call to .toISOString() */}
+            <div>{props.date.toISOString()}</div> {/* Date requires stringifying, hence the call to .toISOString() */}
             <div className="expense-item__description">
-                <h2>{expenseTitle}</h2>
-                <div className="expense-item__price">${expensePrice}</div>
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">${props.amount}</div>
             </div>
         </div> // end of component root
 
