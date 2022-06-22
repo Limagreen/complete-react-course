@@ -10,10 +10,10 @@ function ExpenseDate() {
     }
 
     return (
-        <div>
-            <div>{expenseDate.month}</div>
-            <div>{expenseDate.year}</div>
-            <div>{expenseDate.day}</div>
+        <div className="expense-date">
+            <div className="expense-date__month">{expenseDate.month}</div>
+            <div className="expense-date__year">{expenseDate.year}</div>
+            <div className="expense-date__day">{expenseDate.day}</div>
         </div>
     );
 
