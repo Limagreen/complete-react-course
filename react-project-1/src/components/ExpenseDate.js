@@ -2,12 +2,12 @@ import "./ExpenseDate.css";
 
 function ExpenseDate(props) {
 
-    // in order to use the 'this' keyword, the expressions to define month, year, and day needed to be functions
+    const locale = 'en-US'
+
     const expenseDate = {
-        locale: 'en-us',
-        month: () => { return props.date.toLocaleString(this.locale, { month: 'long' }) },
-        year: () => { return props.date.toLocaleString(this.locale, { year: 'numeric' }) },
-        day: () => { return props.date.toLocaleString(this.locale, { day: 'numeric' }) },
+        month: props.date.toLocaleString(locale, { month: 'long' }),
+        year: props.date.toLocaleString(locale, { year: 'numeric' }),
+        day: props.date.toLocaleString(locale, { day: 'numeric' }),
     };
 
     return (

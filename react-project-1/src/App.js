@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem date={tempArgs.date} title={tempArgs.title} amount={tempArgs.amount}></ExpenseItem>
+      <ExpenseItem date={tempArgs.date} title={tempArgs.title} amount={tempArgs.amount} />
     </div >
   );
 }

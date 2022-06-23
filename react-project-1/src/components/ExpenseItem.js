@@ -10,7 +10,7 @@ function ExpenseItem(props) { // props (an object) scontains all attribute-value
 
             <div className="expense-item__description">
                 <h2>{props.title}</h2>
-                <div className="expense-item__price">${props.amount}</div>
+                <div className="expense-item__price">${props.amount}</div> {/* The '$' is literally just to have a $ appear in the text */}
             </div>
         </div> // end of component root
 
