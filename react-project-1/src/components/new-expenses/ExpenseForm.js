@@ -21,7 +21,7 @@ function ExpenseForm() {
             </div>
 
             <div className="new-expense__actions">
-                <button type="submt">Add Expense</button>
+                <button type="submit">Add Expense</button>
             </div>
         </form>
     );
