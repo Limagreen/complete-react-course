@@ -3,9 +3,6 @@ import "./Expenses.css";
 
 function Expenses(props) {
 
-    const expense = {
-    };
-
     return (
         <div className="expenses">
             <ExpenseItem
