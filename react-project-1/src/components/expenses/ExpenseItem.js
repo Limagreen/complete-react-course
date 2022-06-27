@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import ExpenseDate from "./ExpenseDate"
-import Card from "../ui/Card"
+import ExpenseDate from "./ExpenseDate";
+import Card from "../ui/Card";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) { // props (an object) scontains all attribute-value (key-value) pairs passed in component-call. By convention it's named "props"
