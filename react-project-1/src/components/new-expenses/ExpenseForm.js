@@ -3,7 +3,6 @@ import "./ExpenseForm.css";
 
 function ExpenseForm() {
 
-
     const [formFields, setFormFields] = useState({
         title: "",
         amount: "",
@@ -12,27 +11,33 @@ function ExpenseForm() {
 
     /* Event listeners */
     function titleChangeHandler(event) {
-        setFormFields({
-            // you must still refresh the other two to prevent the new object from erasing them entirely. Do this first so that you don't overwrite the new title
-            ...formFields,
-            title: event.target.value
-        })
+        setFormFields((prevState) => {
+            return {
+                ...prevState,
+                title: event.target.value
+            };
+        });
     }
 
     function changeAmountHandler(event) {
-        setFormFields({
-            ...formFields,
-            amount: event.target.value
-        })
+        setFormFields((prevState) => {
+            return {
+                ...prevState,
+                amount: event.target.value
+            };
+        });
     }
 
     function changeDateHandler(event) {
-        setFormFields({
-            ...formFields,
-            date: event.target.value
-        })
+        setFormFields((prevState) => {
+            return {
+                ...prevState,
+                date: event.target.value
+            };
+        });
     }
 
+    /* Component */
     return (
         <form>
             <div className="new-expense__controls">
