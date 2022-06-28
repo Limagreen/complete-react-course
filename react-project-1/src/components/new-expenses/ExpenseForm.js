@@ -32,28 +32,35 @@ function ExpenseForm() {
         setFormFields((prevState) => {
             return {
                 ...prevState,
-                date: event.target.value
+                date: new Date(event.target.value)
             };
         });
+
+        console.log(formFields.date);
+    }
+
+    function submitHandler(event) {
+        event.preventDefault(); // used here to prevent the form from refreshing the page
+
+        console.log(formFields.date);
+
     }
 
     /* Component */
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
-                <div className="new-expense__control"> {/* this is a differnet css class -> control is singular, not plural*/}
+                <div className="new-expense__control">
                     <label>Title</label>
                     <input type="text" onChange={titleChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
                     <input type="number" min="0.01" step="0.01" onChange={changeAmountHandler} />
-                    {/* min sepcifies a minimum value for the input and step specifies the interval for acceptable input values. For example, a step of "3" would only allow 
-                    ..., -3, 0, 3, 6, ...*/}
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2022-12-31" onChange={changeDateHandler} /> {/* the date type gives us a date picker*/}
+                    <input type="date" min="2019-01-01" max="2022-12-31" onChange={changeDateHandler} />
                 </div>
             </div>
 
