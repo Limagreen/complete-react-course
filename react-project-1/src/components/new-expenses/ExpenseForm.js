@@ -32,18 +32,20 @@ function ExpenseForm() {
         setFormFields((prevState) => {
             return {
                 ...prevState,
-                date: new Date(event.target.value)
+                date: event.target.value
             };
         });
-
-        console.log(formFields.date);
     }
-
+    // new Date(formFields.date) // at submission we want an actual Date object
     function submitHandler(event) {
         event.preventDefault(); // used here to prevent the form from refreshing the page
 
-        console.log(formFields.date);
-
+        // user submitted -> reset form fields in the input elements
+        setFormFields({
+            title: "",
+            amount: "",
+            date: ""
+        });
     }
 
     /* Component */
@@ -52,15 +54,15 @@ function ExpenseForm() {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler} />
+                    <input type="text" value={formFields.title} onChange={titleChangeHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={changeAmountHandler} />
+                    <input type="number" min="0.01" step="0.01" value={formFields.amount} onChange={changeAmountHandler} />
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2022-12-31" onChange={changeDateHandler} />
+                    <input type="date" min="2019-01-01" max="2022-12-31" value={formFields.date} onChange={changeDateHandler} />
                 </div>
             </div>
 
