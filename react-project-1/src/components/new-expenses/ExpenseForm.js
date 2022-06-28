@@ -7,7 +7,7 @@ function ExpenseForm(props) {
         title: "",
         amount: "",
         date: ""
-    })
+    });
 
     /* Event listeners */
     function titleChangeHandler(event) {
