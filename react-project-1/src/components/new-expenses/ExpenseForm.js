@@ -3,21 +3,34 @@ import "./ExpenseForm.css";
 
 function ExpenseForm() {
 
-    const [title, setTitle] = useState(""); // empty string because there is no associated prop, and the value starts as empty
-    const [amount, setAmount] = useState(""); // event.target.value is always a string, hence why we don't change the format for numbers and dates.
-    const [date, setDate] = useState("");
+
+    const [formFields, setFormFields] = useState({
+        title: "",
+        amount: "",
+        date: ""
+    })
 
     /* Event listeners */
     function titleChangeHandler(event) {
-        setTitle(event.target.value); // update title with the new value
+        setFormFields({
+            // you must still refresh the other two to prevent the new object from erasing them entirely. Do this first so that you don't overwrite the new title
+            ...formFields,
+            title: event.target.value
+        })
     }
 
     function changeAmountHandler(event) {
-        setAmount(event.target.value);
+        setFormFields({
+            ...formFields,
+            amount: event.target.value
+        })
     }
 
     function changeDateHandler(event) {
-        setDate(event.target.value);
+        setFormFields({
+            ...formFields,
+            date: event.target.value
+        })
     }
 
     return (
