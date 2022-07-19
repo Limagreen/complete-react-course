@@ -20,17 +20,18 @@ function Expenses(props) {
         <Card className="expenses">
             <ExpensesFilter selected={year} onChangeFilter={changeYearHandler} />
 
-            {   // if filteredExpenses isn't empty render the list; otherwise display a default message
-                filteredExpenses.length === 0 ? <p>No expenses found.</p> :
-                    filteredExpenses.map(expense =>
-                        <ExpenseItem
-                            key={expense.id} // add a unique id to the new expense for React to be able to track it
-                            title={expense.title}
-                            amount={expense.amount}
-                            date={expense.date}
-                        />
-                    )
-            }
+            {/* if filteredExpenses is empty display a default message */}
+            {filteredExpenses.length === 0 && <p>No expenses found.</p>}
+
+            {/* if filteredExpenses isn't empty render the list*/}
+            {filteredExpenses.length > 0 && filteredExpenses.map(expense =>
+                <ExpenseItem
+                    key={expense.id} // add a unique id to the new expense for React to be able to track it
+                    title={expense.title}
+                    amount={expense.amount}
+                    date={expense.date}
+                />
+            )}
         </Card>
     );
 }
