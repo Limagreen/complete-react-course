@@ -19,6 +19,7 @@ function Expenses(props) {
             {
                 props.expenseList.map(expense =>
                     <ExpenseItem
+                        key={expense.id} // add a unique id to the new expense for React to be able to track it
                         title={expense.title}
                         amount={expense.amount}
                         date={expense.date}
