@@ -40,6 +40,8 @@ function ExpenseForm(props) {
     function submitHandler(event) {
         event.preventDefault(); // used here to prevent the form from refreshing the page
 
+        formFields.date = new Date(formFields.date); // make the date input an actual Date object first
+
         props.onSubmission(formFields); // tell the parent (NewExpense) the submission details
 
         // user submitted -> reset form fields in the input elements
