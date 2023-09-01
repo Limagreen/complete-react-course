@@ -7,11 +7,16 @@
     },
     "todohighlight.keywords": [
         {
-            "text": "BASE- | DVS-",
+            "text": "Ticket note",
             "regex": {
-                "pattern": "\\[\\w{2}\\]\\s(BASE-|DVS-)[0-9]{1,10}" // Ex: [CG] BASE-22 [K4] DVS-4462
+                "pattern": "\\[\\w{2}\\]\\s([A-Z]+-)[0-9]{1,10}" // Ex: [CG] BASE-22 [K4] DVS-4462 [LD] TLC-332 [TB] ISRCH-7
             },
             "backgroundColor": "#35bbdb",
+        },
+        {
+            "text": "techDebt",
+            "color": "#333",
+            "backgroundColor": "#e67e22"
         },
         {
             "text": "BOOKMARK:",
@@ -37,6 +42,27 @@
             "backgroundColor": "#e74c3c"
         },
         {
+            "text": "const",
+            "backgroundColor": "#aa77ff",
+            "regex": {
+                "pattern": "(?<!(\\/{2}.*)|(\\/\\*.*))\\bconst\\b"
+            }
+        },
+        {
+            "text": "let",
+            "backgroundColor": "violet",
+            "regex": {
+                "pattern": "(?<!(\\/{2}.*)|(\\/\\*.*))\\blet\\b"
+            }
+        },
+        {
+            "text": "var",
+            "backgroundColor": "#e74c3c",
+            "regex": {
+                "pattern": "(?<!(\\/{2}.*)|(\\/\\*.*))\\bvar\\b"
+            }
+        },
+        {
             "text": "return",
             "backgroundColor": "chartreuse",
             "regex": {
@@ -46,7 +72,7 @@
         {
             "text": "JavaDoc Comment", /** Ex: JavaDoc Comment */
             "regex": {
-                "pattern": "\/\\*\\*(.|[\r\n])*?\\*\/"
+                "pattern": "(?<!\\w)\/\\*\\*(.|[\r\n])*?\\*\/"
             },
             "backgroundColor": "#aaaaaa",
             "isWholeLine": true
@@ -54,11 +80,16 @@
         {
             "text": "console.log()",
             "regex": {
-                // "(?<!(\\/{2}.*)|(\\/\\*.*)) ensures that commented-out console calls are ignored: // ex: console.log() is ignored
+                // "(?<!(\\/{2}.*)|(\\/\\*.*)) ensures that commented-out console calls are ignored: // ex: // console.log("I am ignored");
                 "pattern": "(?<!(\\/{2}.*)|(\\/\\*.*))console\\.[a-zA-Z]{1,14}\\(.*\\)" // triggers on ALL console methods. Uses 14 as the upperbound because groupCollapsed() is the longest method
             },
             "color": "yellow",
-            "backgroundColor": "#e74c3c",
+            "backgroundColor": "#4287f5"
+        },
+        {
+            "text": "bad K4 joke",
+            "color": "#333",
+            "backgroundColor": "yellow"
         }
-    ]
+    ],
 }
